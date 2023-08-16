@@ -1,0 +1,289 @@
+:root{
+    --color-today: 96, 165, 250;
+    --color-shceduled: 239, 68, 68;
+    --color-all: 165, 163, 175;
+    --color-all-darker: 55, 65, 81;
+    --color-flagged: 245, 158, 11;
+
+}
+
+html{
+    font-size: 100%;
+}
+
+body{
+    color: rgb(237, 237, 237);
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+
+    background-image: linear-gradient(
+        to right,
+        rgb(248, 113, 133),
+        rgb(244, 114, 182)
+    );
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.style{
+    width: 56rem;
+    height: 42rem;
+
+    border: 2px solid black;
+    background: rgb(31, 41, 55);
+
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: row;
+
+    overflow: hidden;
+}
+
+aside,
+main{
+    padding: 1.25rem;
+}
+
+aside{
+    background: rgb(75, 85, 99);
+    width: 33.333333%;
+}
+
+main{
+    width: 66.666666%;
+    border-left: 2px solid black;
+}
+
+.controls{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.controls button{
+    width: 1rem;
+    height: 1rem;
+    margin: 0.25rem;
+    border: 1px solid rgb(0, 0, 0, 0.6);
+    background: yellow;
+    border-radius: 1rem;
+}
+.controls .close:hover,
+.controls .close:active{
+    background: rgb(239,68, 68);
+
+}
+.controls .close{
+ background: red;
+}
+
+.controls .minimize:hover,
+.controls .minimize:active{
+    background: rgb(245,158, 11);
+
+}
+.controls .minimize{
+ background: yellow;
+}
+
+.controls .maximize:hover,
+.controls .maximize:active{
+    background: rgb(52,211, 153);
+
+}
+.controls .maximize{
+ background: green;
+}
+
+input{
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    border: 1px solid rgb(55, 65, 81);
+    border-left: 1px solid rgb(55, 65, 81);
+    background: rgb(255, 255, 255, 0.4);
+
+}
+
+input::placeholder{
+    color: white;
+    font-weight: normal;
+}
+
+.add-new{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -2.2rem;
+    }
+
+.add-new button{
+    background: rgb(237, 237, 237);
+    border-radius: 0.375rem;
+    font-size: 1.5rem;
+    padding: 0.215rem 0.575rem 0.425rem 0.5rem;
+
+    position: relative;
+    bottom: 0.275rem;
+    right: -0.275rem;
+}
+
+.add-new button:hover,
+.add-new button:active{
+    background: rgb(55, 65, 81);
+}
+/*navigation*/
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.625rem;
+
+}
+nav a{
+    font-weight: bold;
+    background: rgb(255, 255, 255, 0.2);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    color: rgb(237, 237, 237);
+    text-decoration: none;
+}
+nav a:hover,
+nav a:active{
+    color: white;
+}
+nav .today:hover,
+nav .today:active{
+    background: rgb(96, 165, 250);
+}
+nav .scheduled:hover,
+nav .scheduled:active{
+    background: rgb(239, 68, 68);
+}
+nav .all:hover,
+nav .all:active{
+    background: rgb(55, 65, 81);
+}
+nav .flagged:hover,
+nav .flagged:active{
+    background: rgb(245, 158, 11);
+}
+
+nav p{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav svg{
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 2.25rem;
+    stroke: white;
+    fill: white;
+    padding: 0.5rem;
+    margin-bottom: 0.375rem;
+}
+
+.today svg{
+    background: rgb(var(--color-today));
+}
+.scheduled svg{
+    background: rgb(var(--color-shceduled));
+}
+.all svg{
+    background: rgb(var(--color-all));
+
+}
+.flagged svg{
+    background: rgb(var(--color-flagged));
+}
+
+nav span{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+/*title*/
+h1{
+    font-size: 2.25rem;
+    margin-bottom: 1.725rem;
+    display: none;
+}
+h1.today{
+    color: rgb(var( --color-today));
+    display: block;
+}
+
+h1.scheduled{
+    color: rgb(var( --color-shceduled));
+}
+h1.all{
+    color: rgb(var( --color-all));
+}
+h1.flagged{
+    color: rgb(var( --color-flagged));
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.todos li{
+    display: flex;
+}
+.todos p{
+    padding: 0.625rem 0;
+    border-bottom: 1px solid rgb(55, 65, 81);
+    flex-grow: 1;
+}
+
+.todos svg{
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+     margin-top: 1.425rem;
+    margin-right: 0.425rem;
+
+    stroke: white;
+    stroke-width: 1;
+    fill: rgb(55, 65, 81);
+
+    cursor: pointer;
+}
+
+.todos svg:hover,
+.todos svg:active{
+    fill: yellow;
+}
+.reminder p{
+    display: flex;
+
+}
+.reminder svg{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    stroke: white;
+    fill: white;
+    padding: 0.3rem;
+    margin-top: -0.6rem;
+}
+.reminder h2{
+    color: rgb(165, 175, 192);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.reminder svg{
+    background-color: rgb(var( --color-today));
+}
+
+.reminder span{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 2.625rem;
+    display: table;
+    margin-top: -2.45rem;
+}
